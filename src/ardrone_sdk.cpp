@@ -56,14 +56,14 @@ extern "C"
     return (THREAD_RET) 0;
   }
 
-  C_RESULT ardrone_tool_init_custom(void)
+  C_RESULT ardrone_tool_init_custom(char* prefix)
   {
     should_exit = 0;
     vp_os_mutex_init(&navdata_lock);
     vp_os_mutex_init(&video_lock);
     vp_os_mutex_init(&twist_lock);
 
-    ros_driver = new ARDroneDriver();
+    ros_driver = new ARDroneDriver(prefix);
     int _w, _h;
 
     if (IS_ARDRONE2)

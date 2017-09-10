@@ -66,7 +66,7 @@ class ARDroneDriver;
 class ARDroneDriver
 {
 public:
-  ARDroneDriver();
+  ARDroneDriver(std::string name);
   ~ARDroneDriver();
   void run();
   static bool ReadCovParams(const std::string& param_name, boost::array<double, 9> &cov_array);
