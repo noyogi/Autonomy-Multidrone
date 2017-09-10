@@ -1,4 +1,32 @@
-# ardrone_autonomy 
+# ardrone_autonomy for multiple drones
+
+## Under Development
+
+Run as 
+
+...
+rosrun ardrone_autonomy ardrone_driver --ip 192.168.0.134 --prefix "ardrone_2" 
+rosrun ardrone_autonomy ardrone_driver --ip 192.168.0.134 --prefix "ardrone_2" -
+-nodrone
+...
+
+## Install
+
+You can download using github 
+
+...
+mkdir driver
+cd driver
+git clone https://github.com/noyogi/Autonomy-Multidrone.git
+cd ..
+rosdep install --from-paths src -i
+catkin_make
+cp src/moveToLib devel/src/ardronelib/ARDroneLib/Soft/Lib/ardrone_tool/*
+...
+
+
+You need to manually update the library to support the driver
+
 
 [ROS](http://ros.org) Driver for [Parrot AR-Drone](http://ardrone2.parrot.com/) 1.0 & 2.0 Quadrocopters
 
